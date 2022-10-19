@@ -5,11 +5,11 @@ using namespace std;
 
 
 void afficher(vector<vector<int>> tableau){
-    for (int i = 0; i < tableau.size(); i++) {
-        for (int j = 0; j < tableau[0].size(); j++) {// dimension y du tableau
-            if(tableau[i][j] == 1){
+    for (int i = 0; i < tableau.size(); i++) { // dim Y
+        for (int j = 0; j < tableau[0].size(); j++) {// dim X
+            if(tableau[j][i] == 1){
                 cout << "x";
-            }else if(tableau[i][j] == 1) {
+            }else if(tableau[j][i] == 2) {
                 cout << "O";
             }else{
                 cout << ".";
@@ -45,36 +45,76 @@ bool PlayerWin(vector<vector<int>> tableau, int x, int y, int player){ // retour
             fourToWin = 0;
         }
     }
+
     return false;
+}
+
+bool addChoice(vector<vector<int>> &tableau, int player, string playerChoice ){
+
+    try {
+        int answerCase = stoi(playerChoice);
+
+
+        if(answerCase > tableau.size()){
+            return false;
+        }
+        for(int i = 0; i < tableau[0].size(); i++) { // Y
+            cout << tableau[answerCase][i];
+            if(tableau[answerCase][i] == 0){
+                tableau[answerCase][i] = player;
+                cout << "case : x " << answerCase << " y : " << i << "\n" ;
+                return true;
+            }
+        }
+        return false;
+    } catch (const std::exception& e) {
+        return false;
+    }
+
+
 }
 
 
 int main(){
-    string answerPlayer;
+    string answerPlayer, playerChoice;
     vector<vector<int>> tableau(4, vector<int>(4, 0));
 
-    tableau[0][0] = 1;
-    tableau[1][0] = 1;
-    tableau[2][0] = 1;
-    tableau[3][0] = 1;
 
 
-    if(PlayerWin(tableau,0,0,1)){
+
+    if(PlayerWin(tableau,0,0,2)){
         cout << "true";
     }else{
         cout << "false";
     }
 
-    //afficher(tableau);
-/*
+
+    int player;
+    int nombreDeCaseRestant = (tableau.size() + 1) * (tableau[0].size() + 1);
+    cout  << "  PUISSANCE 4\n"
+             "Play 2 player: p \n"
+             "exit : x\n";
+
     while (answerPlayer != "x") {
-        cout  << "  PUISSANCE 4\n"
-                 "Play 2 player: \n"
-                 "exit : x\n";
+        if(answerPlayer == "p"){
+
+            if(nombreDeCaseRestant % 2 == 0){
+                player = 1;
+            }else{
+                player = 2;
+            }
+            afficher(tableau);
+            cin >> playerChoice;
+
+            if(addChoice(tableau,player,playerChoice)){
+                nombreDeCaseRestant--;
+            }else{
+                cout << "case incorecte \n";
+            }
 
 
-
-        cin >> answerPlayer;
-
-    }*/
+        }else{
+            cin >> answerPlayer;
+        }
+    }
 }
