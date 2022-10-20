@@ -5,8 +5,8 @@ using namespace std;
 
 
 void afficher(vector<vector<int>> tableau){
-    for (int i = 0; i < tableau.size(); i++) { // dim Y
-        for (int j = 0; j < tableau[0].size(); j++) {// dim X
+    for (int i = tableau[0].size()-1; i >= 0; i--) { // dim Y
+        for (int j = 0; j < tableau.size(); j++) {// dim X
             if(tableau[j][i] == 1){
                 cout << "x";
             }else if(tableau[j][i] == 2) {
@@ -77,18 +77,7 @@ bool addChoice(vector<vector<int>> &tableau, int player, string playerChoice ){
 
 int main(){
     string answerPlayer, playerChoice;
-    vector<vector<int>> tableau(4, vector<int>(4, 0));
-
-
-
-
-    if(PlayerWin(tableau,0,0,2)){
-        cout << "true";
-    }else{
-        cout << "false";
-    }
-
-
+    vector<vector<int>> tableau(6, vector<int>(7, 0));
     int player;
     int nombreDeCaseRestant = (tableau.size() + 1) * (tableau[0].size() + 1);
     cout  << "  PUISSANCE 4\n"
