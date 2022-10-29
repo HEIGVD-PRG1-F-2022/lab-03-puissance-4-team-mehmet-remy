@@ -1,0 +1,15 @@
+# ninja log v5
+3	587	6878973901713325	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+588	684	6878973902673636	Mandelbrot.exe	91cf0cdcf279f645
+3	630	6879703633827128	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+631	750	6879703634990861	Mandelbrot.exe	91cf0cdcf279f645
+3	585	6879704278232796	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+585	676	6879704279111834	Mandelbrot.exe	91cf0cdcf279f645
+3	582	6879704858139954	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+582	672	6879704859026007	Mandelbrot.exe	91cf0cdcf279f645
+4	589	6879705861340191	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+590	680	6879705862236942	Mandelbrot.exe	91cf0cdcf279f645
+3	600	6879718428601512	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+601	694	6879718429518681	Mandelbrot.exe	91cf0cdcf279f645
+4	672	6879719195887561	CMakeFiles/Mandelbrot.dir/main.cpp.obj	524eee86a4018939
+672	764	6879719196779133	Mandelbrot.exe	91cf0cdcf279f645
